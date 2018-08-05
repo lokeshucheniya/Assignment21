@@ -4,10 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+//Class Grep for finding a specific word  in given file
 public class grep {
 	public static void main(String args[]) throws IOException {
 		File file = new File("P:\\Users\\lucheniy\\Desktop\\Sample.txt");
 		Scanner src = new Scanner(file);
+		
+		//Taking input from user
 		Scanner sr = new Scanner(System.in);
 		System.out.println("Enter file");
 		String str = sr.nextLine();
@@ -17,6 +20,8 @@ public class grep {
 		
 		
 		int c = 0,nf=0;
+		
+		//Logic for searching word
 		while(src.hasNextLine()) {
 			String line = src.nextLine();
 			if(line.contains(word)) {
@@ -28,6 +33,8 @@ public class grep {
 				nf++;
 			}
 		}
+		
+		//If not present 
 		if(c == nf) {
 			System.out.println("Not found");
 		}
